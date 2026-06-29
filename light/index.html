@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Інстал Авто — тонування, автозвук, шумоізоляція, ксенон, парктроніки та камера заднього ходу у Львові. Акуратний монтаж, гарантія, підбір під авто.">
+  <meta name="keywords" content="тонування львів, автозвук львів, шумоізоляція львів, ксенон львів, парктронік львів, камера заднього ходу львів, інстал авто">
+  <meta property="og:title" content="Інстал Авто | Тонування та автотюнінг у Львові">
+  <meta property="og:description" content="Тонування, автозвук, шумоізоляція та світло. Акуратний монтаж і підбір під ваше авто.">
+  <meta property="og:type" content="website">
+  <title>Інстал Авто | Тонування та автотюнінг у Львові</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Інстал Авто">
+        <span class="brand-mark"><i data-lucide="car-front"></i></span>
+        <span class="brand-text"><strong>Інстал</strong> Авто</span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Відкрити меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="navMenu" aria-label="Головна навігація">
+        <a href="#services">Послуги</a>
+        <a href="#works">Роботи</a>
+        <a href="#prices">Ціни</a>
+        <a href="#reviews">Відгуки</a>
+        <a class="nav-cta" href="#contacts">Залишити заявку</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <a href="https://kuznya.studio/portfolio?utm_source=demo&utm_medium=badge&utm_campaign=instal-avto"
+         target="_blank" rel="noopener" class="kuznya-badge"
+         aria-label="Сайт зроблено в студії Кузня — перейти на kuznya.studio">
+        <span class="kuznya-badge__spark"></span>
+        <span class="kuznya-badge__text">
+          <span class="kuznya-badge__label">Сайт зроблено в</span>
+          <span class="kuznya-badge__brand">Кузні</span>
+        </span>
+        <svg class="kuznya-badge__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 17 17 7M9 7h8v8"/>
+        </svg>
+      </a>
+
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow"><i data-lucide="map-pin"></i> Студія автотюнінгу · Львів, вул. Мідна 2</span>
+          <h1>Тонування та автотюнінг, після якого авто хочеться розглядати</h1>
+          <p class="hero-lead">
+            Тонування, автозвук, шумоізоляція, сигналізація, світло та камери заднього ходу.
+            Підбираємо рішення під конкретне авто — щоб усе виглядало охайно і працювало без клопоту.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contacts">Залишити заявку</a>
+            <a class="btn btn-outline" href="tel:+380677622590"><i data-lucide="phone"></i> 067 762 2590</a>
+          </div>
+          <ul class="hero-bullets">
+            <li><i data-lucide="badge-check"></i> Гарантія на роботи</li>
+            <li><i data-lucide="badge-check"></i> Підбір під вашу модель</li>
+            <li><i data-lucide="badge-check"></i> Акуратний монтаж</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual reveal delay-1">
+          <div class="hero-media">
+            <img src="image/hero-car-cutout.png?v=20260629" alt="Автомобіль після тонування" class="hero-car">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST COUNTERS -->
+    <!-- ⚠️ ПЛЕЙСХОЛДЕРИ: узгодити реальні цифри з власником -->
+    <section class="stats-band" aria-label="Цифри студії">
+      <div class="container stats-grid">
+        <div class="stat reveal">
+          <span class="stat-num" data-count="8">8</span><span class="stat-suffix">+</span>
+          <span class="stat-label">років досвіду</span>
+        </div>
+        <div class="stat reveal delay-1">
+          <span class="stat-num" data-count="3000">3000</span><span class="stat-suffix">+</span>
+          <span class="stat-label">авто в роботі</span>
+        </div>
+        <div class="stat reveal delay-2">
+          <span class="stat-num">4.9</span><span class="stat-suffix">★</span>
+          <span class="stat-label">середній відгук</span>
+        </div>
+        <div class="stat reveal delay-3">
+          <span class="stat-num" data-count="12">12</span><span class="stat-suffix"> міс</span>
+          <span class="stat-label">гарантія на роботи</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Послуги</span>
+          <h2>Практичні рішення, які справді покращують авто</h2>
+          <p>Підбираємо рішення під конкретне авто, щоб усе виглядало охайно і працювало без зайвого клопоту.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card reveal"><span class="service-ico"><i data-lucide="sparkles"></i></span><h3>Тонування</h3><p>Підбір плівки, акуратне встановлення та чистий візуальний результат.</p></article>
+          <article class="service-card reveal delay-1"><span class="service-ico"><i data-lucide="shield"></i></span><h3>Автосигналізація</h3><p>Монтаж охоронних систем з налаштуванням під вашу модель авто.</p></article>
+          <article class="service-card reveal delay-2"><span class="service-ico"><i data-lucide="volume-2"></i></span><h3>Шумоізоляція</h3><p>Менше зайвого шуму, більше комфорту на трасі та в місті.</p></article>
+          <article class="service-card reveal"><span class="service-ico"><i data-lucide="music-2"></i></span><h3>Акустика</h3><p>Оновлення динаміків і налаштування звучання під ваш салон.</p></article>
+          <article class="service-card reveal delay-1"><span class="service-ico"><i data-lucide="lightbulb"></i></span><h3>Ксенон</h3><p>Світло, яке краще читає дорогу і виглядає гармонійно з авто.</p></article>
+          <article class="service-card reveal delay-2"><span class="service-ico"><i data-lucide="radar"></i></span><h3>Парктронік</h3><p>Допомога при маневрах у дворі, на парковці та в тісних місцях.</p></article>
+          <article class="service-card reveal"><span class="service-ico"><i data-lucide="cloud-fog"></i></span><h3>ПТФ</h3><p>Установка протитуманних фар та їхнє коректне підключення.</p></article>
+          <article class="service-card reveal delay-1"><span class="service-ico"><i data-lucide="camera"></i></span><h3>Камера заднього ходу</h3><p>Зручніше паркування і кращий огляд під час руху назад.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section class="section section-soft" id="benefits">
+      <div class="container split-layout">
+        <div class="split-copy reveal">
+          <span class="section-tag">Чому ми</span>
+          <h2>Результат не лише красивий, а й практичний</h2>
+          <p>Працюємо акуратно, підбираємо рішення під конкретну модель і завжди пояснюємо, що саме отримаєте після встановлення.</p>
+          <div class="feature-list">
+            <article class="feature-item"><i data-lucide="badge-check"></i><div><h3>Акуратний монтаж</h3><p>Без хаотичних дрібниць, з чистим підходом до кожного елемента.</p></div></article>
+            <article class="feature-item"><i data-lucide="settings-2"></i><div><h3>Підбір під авто</h3><p>Рішення під конкретну марку, рік і задачу, а не «один варіант на всіх».</p></div></article>
+            <article class="feature-item"><i data-lucide="message-circle"></i><div><h3>Пояснюємо просто</h3><p>Розповідаємо, що дасть кожна послуга і де є справжній сенс.</p></div></article>
+            <article class="feature-item"><i data-lucide="shield-check"></i><div><h3>Гарантія на роботи</h3><p>Відповідаємо за якість монтажу та матеріалів.</p></div></article>
+          </div>
+        </div>
+        <div class="split-media reveal delay-1">
+          <div class="media-frame"><img src="image/photo.jpg" alt="Автомобіль на завершенні робіт" loading="lazy"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKS / GALLERY -->
+    <section class="section" id="works">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Роботи</span>
+          <h2>Приклади робіт, які вже виїхали з нашого боксу</h2>
+          <p>Реальні кейси з тонування, автозвуку та камери заднього ходу. Натисніть на фото, щоб збільшити.</p>
+        </div>
+
+        <div class="gallery-filters reveal" role="tablist">
+          <button class="gf-btn is-active" data-filter="all" type="button">Усі</button>
+          <button class="gf-btn" data-filter="tint" type="button">Тонування</button>
+          <button class="gf-btn" data-filter="audio" type="button">Автозвук</button>
+          <button class="gf-btn" data-filter="other" type="button">Інше</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <figure class="gallery-card reveal" data-cat="tint"><img src="image/Тонування.jpg" alt="Тонування автомобіля" loading="lazy"><figcaption>Тонування</figcaption></figure>
+          <figure class="gallery-card reveal delay-1" data-cat="tint"><img src="image/тонування тесла біла вид збоку в боксі.jpg" alt="Тонування Tesla, вид збоку" loading="lazy"><figcaption>Тонування Tesla</figcaption></figure>
+          <figure class="gallery-card reveal delay-2" data-cat="tint"><img src="image/тонування тесла біла вид ззаду в боксі.jpg" alt="Тонування Tesla, вид ззаду" loading="lazy"><figcaption>Тонування Tesla</figcaption></figure>
+          <figure class="gallery-card reveal" data-cat="tint"><img src="image/Тонування інфініті біла вид ззаду в боксі.jpg" alt="Тонування Infiniti" loading="lazy"><figcaption>Тонування Infiniti</figcaption></figure>
+          <figure class="gallery-card reveal delay-1" data-cat="audio"><img src="image/Акустика.jpg" alt="Встановлення акустики" loading="lazy"><figcaption>Акустика</figcaption></figure>
+          <figure class="gallery-card reveal delay-2" data-cat="other"><img src="image/Камера заднього ходу.jpg" alt="Камера заднього ходу" loading="lazy"><figcaption>Камера заднього ходу</figcaption></figure>
+          <figure class="gallery-card reveal" data-cat="other"><img src="image/green car side view.jpg" alt="Авто після робіт, вид збоку" loading="lazy"><figcaption>Готове авто</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICES -->
+    <!-- ⚠️ ПЛЕЙСХОЛДЕРИ ЦІН: узгодити з власником перед публікацією -->
+    <section class="section section-soft" id="prices">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Ціни</span>
+          <h2>Орієнтовна вартість послуг</h2>
+          <p>Фінальна ціна залежить від марки авто та обсягу робіт. Залиште заявку — порахуємо точно та безкоштовно.</p>
+        </div>
+        <div class="price-grid">
+          <article class="price-card reveal"><span class="price-ico"><i data-lucide="sparkles"></i></span><h3>Тонування</h3><div class="price-val">від <strong>1 500</strong> ₴</div><p>Підбір плівки та акуратне встановлення.</p><a class="price-link" href="#contacts">Розрахувати →</a></article>
+          <article class="price-card price-card-featured reveal delay-1"><span class="price-badge">Популярне</span><span class="price-ico"><i data-lucide="volume-2"></i></span><h3>Шумоізоляція</h3><div class="price-val">від <strong>4 000</strong> ₴</div><p>Тиша в салоні на трасі й у місті.</p><a class="price-link" href="#contacts">Розрахувати →</a></article>
+          <article class="price-card reveal delay-2"><span class="price-ico"><i data-lucide="shield"></i></span><h3>Сигналізація</h3><div class="price-val">від <strong>2 500</strong> ₴</div><p>Монтаж і налаштування під вашу модель.</p><a class="price-link" href="#contacts">Розрахувати →</a></article>
+          <article class="price-card reveal delay-3"><span class="price-ico"><i data-lucide="camera"></i></span><h3>Камера з/х</h3><div class="price-val">від <strong>1 200</strong> ₴</div><p>Зручне паркування та кращий огляд.</p><a class="price-link" href="#contacts">Розрахувати →</a></article>
+        </div>
+        <p class="price-note">* Ціни орієнтовні. Точну вартість підтверджуємо після огляду авто.</p>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <!-- ⚠️ ПЛЕЙСХОЛДЕРИ ВІДГУКІВ: замінити на реальні (Google / соцмережі) -->
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-tag">Відгуки</span>
+          <h2>Що кажуть клієнти</h2>
+          <p>Реальні враження від роботи студії.</p>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card reveal">
+            <div class="review-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+            <p>«Зробили тонування на Tesla — рівно, без бульбашок, скло виглядає як заводське. Прийняли вчасно, усе пояснили.»</p>
+            <div class="review-author"><span class="review-ava">А</span><div><strong>Андрій</strong><span>Tesla Model 3</span></div></div>
+          </article>
+          <article class="review-card reveal delay-1">
+            <div class="review-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+            <p>«Поставили камеру заднього ходу і парктронік. Паркуватися стало набагато простіше, проводку сховали акуратно.»</p>
+            <div class="review-author"><span class="review-ava">М</span><div><strong>Марія</strong><span>Infiniti QX50</span></div></div>
+          </article>
+          <article class="review-card reveal delay-2">
+            <div class="review-stars"><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i><i data-lucide="star"></i></div>
+            <p>«Шумоізоляція дверей і арок — в салоні реально тихіше. Хлопці знають свою справу, рекомендую.»</p>
+            <div class="review-author"><span class="review-ava">О</span><div><strong>Олег</strong><span>VW Passat</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS + FORM + MESSENGERS -->
+    <section class="section section-dark" id="contacts">
+      <div class="container contact-layout">
+        <div class="contact-form-wrap reveal">
+          <span class="section-tag section-tag-light">Заявка</span>
+          <h2>Залиште заявку — передзвонимо за 15 хвилин</h2>
+          <p class="contact-sub">Або напишіть у месенджер — відповідаємо швидко.</p>
+
+          <form class="lead-form" id="leadForm" novalidate>
+            <div class="field">
+              <label for="lf-name">Ваше ім'я</label>
+              <input id="lf-name" name="name" type="text" placeholder="Як до вас звертатись" required>
+            </div>
+            <div class="field">
+              <label for="lf-phone">Телефон</label>
+              <input id="lf-phone" name="phone" type="tel" placeholder="067 000 00 00" required>
+            </div>
+            <div class="field">
+              <label for="lf-service">Послуга</label>
+              <select id="lf-service" name="service">
+                <option>Тонування</option>
+                <option>Шумоізоляція</option>
+                <option>Автосигналізація</option>
+                <option>Акустика</option>
+                <option>Ксенон / світло</option>
+                <option>Камера / парктронік</option>
+                <option>Інше</option>
+              </select>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Відправити заявку</button>
+            <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="messengers">
+            <a class="msg msg-viber" href="viber://chat?number=%2B380677622590" aria-label="Написати у Viber"><i data-lucide="message-circle"></i> Viber</a>
+            <a class="msg msg-tg" href="tg://resolve?phone=380677622590" aria-label="Написати у Telegram"><i data-lucide="send"></i> Telegram</a>
+            <a class="msg msg-wa" href="https://wa.me/380677622590" target="_blank" rel="noopener" aria-label="Написати у WhatsApp"><i data-lucide="message-square"></i> WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="contact-info reveal delay-1">
+          <div class="contact-card">
+            <div class="contact-row"><i data-lucide="map-pin"></i><div><span>Адреса</span><strong>вул. Мідна 2, Львів</strong><p>79037, Lviv Oblast</p></div></div>
+            <div class="contact-row"><i data-lucide="phone"></i><div><span>Телефон</span><a href="tel:+380677622590">067 762 2590</a></div></div>
+            <div class="contact-row"><i data-lucide="clock"></i><div><span>Графік</span><strong>Пн–Сб, 09:00–19:00</strong></div></div>
+          </div>
+          <div class="map-frame">
+            <iframe title="Карта Інстал Авто"
+              src="https://www.google.com/maps?q=%D0%B2%D1%83%D0%BB.%20%D0%9C%D1%96%D0%B4%D0%BD%D0%B0%202%2C%2079037%2C%20Lviv%2C%20Lviv%20Oblast&output=embed"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#top"><span class="brand-mark"><i data-lucide="car-front"></i></span><span class="brand-text"><strong>Інстал</strong> Авто</span></a>
+      <div class="footer-links">
+        <a href="#services">Послуги</a><a href="#works">Роботи</a><a href="#prices">Ціни</a><a href="#contacts">Контакти</a>
+      </div>
+      <span class="footer-meta">&copy; 2026 Інстал Авто · Львів</span>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lb-close" id="lbClose" aria-label="Закрити">&times;</button>
+    <button class="lb-nav lb-prev" id="lbPrev" aria-label="Попереднє">&#8249;</button>
+    <img class="lb-img" id="lbImg" src="" alt="">
+    <button class="lb-nav lb-next" id="lbNext" aria-label="Наступне">&#8250;</button>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

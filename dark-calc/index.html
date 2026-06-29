@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Інстал Авто — Преміальний студійний автотюнінг у Львові. Тонування Llumar/SunTek, автозвук Focal/Alpine, шумоізоляція та камери заднього ходу.">
+  <title>Інстал Авто — Студія Преміального Автотюнінгу та Захисту у Львові</title>
+  <link rel="icon" type="image/jpg" href="image/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@600;700;800&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg-main: #06080d;
+      --bg-card: rgba(18, 24, 38, 0.7);
+      --bg-card-hover: rgba(26, 35, 56, 0.9);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(245, 158, 11, 0.35);
+      
+      --ink-primary: #ffffff;
+      --ink-secondary: #a0aec0;
+      --ink-muted: #64748b;
+      
+      --amber: #f59e0b;
+      --amber-gold: #fbbf24;
+      --cyan-glow: #06b6d4;
+      
+      --grad-amber: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+      --grad-hero: radial-gradient(1200px 600px at 70% 20%, rgba(245, 158, 11, 0.15) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 100%);
+      --grad-card: linear-gradient(180deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 100%);
+      
+      --shadow-glow: 0 0 50px -10px rgba(245, 158, 11, 0.3);
+      --shadow-card: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--ink-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 2; }
+    a { color: inherit; text-decoration: none; }
+
+    .font-heading { font-family: 'Space Grotesk', sans-serif; }
+    .font-accent { font-family: 'Syne', sans-serif; }
+    
+    .amber-text {
+      background: var(--grad-amber);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Modern Glass Header */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(6, 8, 13, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 84px; }
+    
+    .brand { display: flex; align-items: center; gap: 14px; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; }
+    .brand-logo { width: 46px; height: 46px; border-radius: 14px; object-fit: cover; border: 1px solid var(--border-glow); box-shadow: 0 0 20px rgba(245,158,11,0.2); }
+
+    .nav { display: flex; gap: 36px; align-items: center; }
+    .nav a { font-weight: 600; font-size: 15px; color: var(--ink-secondary); transition: all 0.2s; position: relative; }
+    .nav a:hover { color: #fff; }
+    .nav a:hover::after { content:''; position:absolute; bottom:-6px; left:0; right:0; height:2px; background:var(--amber-gold); border-radius:2px; }
+
+    .header-contacts { display: flex; align-items: center; gap: 20px; }
+    .phone-link { font-weight: 800; font-size: 16px; color: var(--amber-gold); display: flex; align-items: center; gap: 8px; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--grad-amber); color: #0f0800; font-weight: 800; font-size: 15px;
+      padding: 15px 32px; border-radius: 14px; border: none; cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+    }
+    .btn:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.6); }
+    .btn-ghost { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-subtle); color: #fff; box-shadow: none; }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); }
+
+    /* Ultra Hero Section */
+    .hero { position: relative; padding: 160px 0 100px; overflow: hidden; background: var(--grad-hero); }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    @media (max-width: 992px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } }
+
+    .kuznya-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 106, 26, 0.12);
+      border: 1px solid rgba(255, 106, 26, 0.3); padding: 7px 16px; border-radius: 30px;
+      font-size: 12.5px; font-weight: 700; color: #ff6a1a; margin-bottom: 24px;
+    }
+    .hero-badge-tag {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(245, 158, 11, 0.1);
+      border: 1px solid var(--border-glow); padding: 6px 16px; border-radius: 30px;
+      font-size: 13px; font-weight: 700; color: var(--amber-gold); margin-bottom: 20px;
+    }
+
+    .hero h1 { font-size: 58px; line-height: 1.08; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 24px; }
+    @media (max-width: 768px) { .hero h1 { font-size: 38px; } }
+    .hero p { font-size: 19px; color: var(--ink-secondary); margin-bottom: 36px; max-width: 620px; line-height: 1.6; }
+    
+    .hero-actions { display: flex; gap: 18px; flex-wrap: wrap; margin-bottom: 48px; }
+    @media (max-width: 992px) { .hero-actions { justify-content: center; } }
+
+    /* Trust Metrics Row */
+    .hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; pt: 24px; border-top: 1px solid var(--border-subtle); max-width: 600px; }
+    @media (max-width: 992px) { .hero-stats { margin: 0 auto; } }
+    .stat-item .num { font-size: 32px; font-weight: 800; font-family: 'Space Grotesk', sans-serif; color: var(--amber-gold); }
+    .stat-item .lbl { font-size: 13px; color: var(--ink-muted); font-weight: 600; }
+
+    .hero-visual { position: relative; display: flex; justify-content: center; }
+    .hero-car { width: 100%; max-width: 580px; filter: drop-shadow(0 25px 40px rgba(0,0,0,0.8)); transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+    .hero-car:hover { transform: scale(1.04) rotate(-1deg); }
+
+    /* Sections Shared */
+    section { padding: 100px 0; position: relative; }
+    .sec-head { text-align: center; max-width: 760px; margin: 0 auto 60px; }
+    .sec-tag { font-size: 13px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: var(--amber-gold); margin-bottom: 12px; display: block; }
+    .sec-title { font-size: 42px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 16px; }
+    @media (max-width: 768px) { .sec-title { font-size: 32px; } }
+
+    /* Interactive Services Tabs */
+    .tabs-nav { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .tab-btn {
+      padding: 14px 26px; border-radius: 14px; background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-subtle); color: var(--ink-secondary); font-weight: 700;
+      font-size: 14.5px; cursor: pointer; transition: all 0.25s; display: flex; align-items: center; gap: 8px;
+    }
+    .tab-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+    .tab-btn.active { background: var(--grad-amber); color: #0f0800; border-color: transparent; box-shadow: 0 8px 20px rgba(245,158,11,0.3); }
+
+    .tab-content { display: none; grid-template-columns: repeat(3, 1fr); gap: 24px; animation: fadeIn 0.4s ease; }
+    .tab-content.active { display: grid; }
+    @media (max-width: 992px) { .tab-content { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .tab-content { grid-template-columns: 1fr; } }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .srv-card-pro {
+      background: var(--bg-card); border: 1px solid var(--border-subtle);
+      border-radius: 24px; padding: 32px; transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex; flex-direction: column; position: relative; overflow: hidden;
+    }
+    .srv-card-pro::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--grad-amber); opacity:0; transition:opacity 0.3s; }
+    .srv-card-pro:hover { transform: translateY(-8px); border-color: var(--border-glow); box-shadow: var(--shadow-glow); background: var(--bg-card-hover); }
+    .srv-card-pro:hover::before { opacity:1; }
+
+    .srv-badge { position: absolute; top: 20px; right: 20px; font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 20px; background: rgba(245, 158, 11, 0.15); color: var(--amber-gold); border: 1px solid var(--border-glow); }
+    .srv-icon-box { width: 56px; height: 56px; border-radius: 16px; background: rgba(245, 158, 11, 0.1); border: 1px solid var(--border-glow); display: grid; place-items: center; color: var(--amber-gold); margin-bottom: 24px; }
+    .srv-card-pro h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
+    .srv-card-pro p { font-size: 15px; color: var(--ink-secondary); line-height: 1.6; margin-bottom: 20px; flex: 1; }
+    
+    .srv-specs { list-style: none; padding: 0; margin-bottom: 24px; border-top: 1px solid var(--border-subtle); pt: 16px; }
+    .srv-specs li { font-size: 13.5px; color: var(--ink-secondary); display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .srv-specs li i { color: var(--amber-gold); width: 16px; }
+
+    /* Interactive Instant Price Calculator Box */
+    .calc-section { background: radial-gradient(800px 400px at 50% 50%, rgba(245,158,11,0.08), transparent); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle); }
+    .calc-card { background: rgba(15, 20, 32, 0.9); border: 1px solid var(--border-glow); border-radius: 32px; padding: 48px; box-shadow: var(--shadow-card); max-width: 1000px; margin: 0 auto; }
+    .calc-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+    @media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; } }
+
+    .opt-group { margin-bottom: 24px; }
+    .opt-label { font-size: 14px; font-weight: 700; margin-bottom: 10px; color: var(--ink-secondary); display: block; }
+    .opt-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
+    .opt-btn { padding: 10px 18px; border-radius: 12px; background: rgba(255,255,255,0.04); border: 1px solid var(--border-subtle); color: #fff; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; }
+    .opt-btn.selected { background: rgba(245,158,11,0.2); border-color: var(--amber-gold); color: var(--amber-gold); }
+
+    .price-box { background: rgba(6, 8, 13, 0.8); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 32px; text-align: center; }
+    .price-val { font-size: 46px; font-weight: 800; font-family: 'Space Grotesk', sans-serif; color: var(--amber-gold); margin: 10px 0; }
+
+    /* Works Gallery Grid */
+    .works-grid-pro { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+    @media (max-width: 900px) { .works-grid-pro { grid-template-columns: 1fr; } }
+    
+    .work-card-pro { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-card); transition: all 0.35s ease; }
+    .work-card-pro:hover { transform: translateY(-8px); border-color: var(--border-glow); box-shadow: var(--shadow-glow); }
+    .work-img-box { height: 260px; overflow: hidden; position: relative; }
+    .work-img-box img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .work-card-pro:hover img { transform: scale(1.08); }
+    .work-tag-badge { position: absolute; top: 16px; left: 16px; background: rgba(6,8,13,0.85); backdrop-filter: blur(10px); border: 1px solid var(--border-glow); color: var(--amber-gold); font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: 20px; }
+    .work-body { padding: 24px; }
+    .work-body h4 { font-size: 20px; font-weight: 800; margin-bottom: 8px; }
+    .work-body p { font-size: 14.5px; color: var(--ink-secondary); }
+
+    /* Contacts & Location */
+    .contact-wrapper { display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; }
+    @media (max-width: 992px) { .contact-wrapper { grid-template-columns: 1fr; } }
+
+    .c-panel { background: var(--bg-card); border: 1px solid var(--border-subtle); border-radius: 28px; padding: 40px; }
+    .c-item { display: flex; gap: 20px; margin-bottom: 28px; align-items: flex-start; }
+    .c-icon-wrap { width: 50px; height: 50px; border-radius: 16px; background: rgba(245, 158, 11, 0.1); border: 1px solid var(--border-glow); display: grid; place-items: center; color: var(--amber-gold); flex-shrink: 0; }
+
+    .map-box { border-radius: 28px; overflow: hidden; border: 1px solid var(--border-subtle); min-height: 420px; box-shadow: var(--shadow-card); }
+    .map-box iframe { width: 100%; height: 100%; min-height: 420px; border: none; filter: grayscale(0.2) contrast(1.1); }
+
+    /* Modal Booking */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); backdrop-filter: blur(16px); z-index: 1000; display: none; place-items: center; opacity: 0; transition: opacity 0.3s; }
+    .modal-overlay.active { display: grid; opacity: 1; }
+    .modal-card { background: #0f1420; border: 1px solid var(--border-glow); border-radius: 28px; padding: 40px; width: min(520px, 90%); position: relative; box-shadow: var(--shadow-glow); }
+    .modal-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--ink-muted); font-size: 24px; cursor: pointer; }
+
+    footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; text-align: center; font-size: 14px; color: var(--ink-muted); background: var(--bg-main); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a href="#top" class="brand font-heading">
+        <img src="image/logo.jpg" alt="Інстал Авто" class="brand-logo">
+        <span>Інстал <span class="amber-text">Авто</span></span>
+      </a>
+
+      <nav class="nav">
+        <a href="#services">Послуги студії</a>
+        <a href="#calculator">Калькулятор</a>
+        <a href="#works">Наші роботи</a>
+        <a href="#contacts">Локація</a>
+      </nav>
+
+      <div class="header-contacts">
+        <a href="tel:+380677622590" class="phone-link">
+          <i data-lucide="phone-call" style="width:18px;"></i> +380 67 762 25 90
+        </a>
+        <button class="btn" onclick="openModal()">Записатися</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- ULTRA HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <a href="https://kuznya.studio" target="_blank" rel="noopener" class="kuznya-badge">
+            <span style="width:6px;height:6px;border-radius:50%;background:#ff6a1a;display:inline-block;"></span>
+            Студійна розробка Кузня →
+          </a>
+          <br>
+          <div class="hero-badge-tag">🏆 СТУДІЯ ПРЕМІАЛЬНОГО АВТОТЮНІНГУ У ЛЬВОВІ</div>
+          
+          <h1 class="font-heading">
+            Досконалий стиль, комфорт та <span class="amber-text">захист вашого авто</span>
+          </h1>
+          
+          <p>
+            Преміальне тонування американськими плівками Llumar та SunTek, професійна шумоізоляція салону, авторська акустика Focal/Alpine та охоронні комплекси з гарантією 5 років.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn" onclick="openModal()">🔥 Онлайн запис зі знижкою</button>
+            <a href="#calculator" class="btn btn-ghost">🧮 Розрахувати вартість</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <div class="num">8+</div>
+              <div class="lbl">років досвіду</div>
+            </div>
+            <div class="stat-item">
+              <div class="num">2 500+</div>
+              <div class="lbl">готових авто</div>
+            </div>
+            <div class="stat-item">
+              <div class="num">5 років</div>
+              <div class="lbl">офіційної гарантії</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="image/hero-car-cutout.png" alt="Преміум авто Інстал Авто" class="hero-car">
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SERVICES EXPLORER -->
+    <section id="services">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag">Послуги студії</span>
+          <h2 class="sec-title font-heading">Оберіть напрямок модернізації авто</h2>
+          <p style="color:var(--ink-secondary); font-size:17px;">Використовуємо лише оригінальні компоненти та сертифіковані матеріали преміум-класу.</p>
+        </div>
+
+        <!-- Category Tabs -->
+        <div class="tabs-nav">
+          <button class="tab-btn active" onclick="switchTab('tint', this)">✨ Тонування & Захист</button>
+          <button class="tab-btn" onclick="switchTab('sound', this)">🔊 Шумоізоляція & Звук</button>
+          <button class="tab-btn" onclick="switchTab('tech', this)">📹 Камери & Світло</button>
+          <button class="tab-btn" onclick="switchTab('sec', this)">🛡️ Автосигналізація</button>
+        </div>
+
+        <!-- Tab 1: Tinting -->
+        <div class="tab-content active" id="tab-tint">
+          <div class="srv-card-pro">
+            <span class="srv-badge">ТОП ПРОДАЖІВ</span>
+            <div class="srv-icon-box"><i data-lucide="sun"></i></div>
+            <h3>Тонування Llumar ATR</h3>
+            <p>Класичне металізоване затемнення скла. Відмінний захист від ультрафіолету та високих температур.</p>
+            <ul class="srv-specs">
+              <li><i data-lucide="check"></i> Захист від УФ-променів 99%</li>
+              <li><i data-lucide="check"></i> Гарантія від вигорання 5 років</li>
+            </ul>
+            <button class="btn btn-ghost" style="width:100%;" onclick="openModal('Тонування Llumar')">Замовити тонування</button>
+          </div>
+
+          <div class="srv-card-pro">
+            <span class="srv-badge">PREMIUM</span>
+            <div class="srv-icon-box"><i data-lucide="shield-alert"></i></div>
+            <h3>Атермальне тонування</h3>
+            <p>Прозора хамелеон-плівка. Захищає салон від перегріву на сонці без затемнення скла.</p>
+            <ul class="srv-specs">
+              <li><i data-lucide="check"></i> Проходить виміри ГОСТ/ГОСТу</li>
+              <li><i data-lucide="check"></i> Салон не гріється влітку</li>
+            </ul>
+            <button class="btn btn-ghost" style="width:100%;" onclick="openModal('Атермальне тонування')">Замовити розрахунок</button>
+          </div>
+
+          <div class="srv-card-pro">
+            <div class="srv-icon-box"><i data-lucide="layers"></i></div>
+            <h3>Бронювання скла</h3>
+            <p>Ударна захисна плівка підвищеної щільності. Захищає від злому та вандалізму.</p>
+            <ul class="srv-specs">
+              <li><i data-lucide="check"></i> Утримання уламків при ударі</li>
+              <li><i data-lucide="check"></i> Товщина плівки 300 мікрон</li>
+            </ul>
+            <button class="btn btn-ghost" style="width:100%;" onclick="openModal('Бронювання скла')">Консультація</button>
+          </div>
+        </div>
+
+        <!-- Tab 2: Sound & Noise -->
+        <div class="tab-content" id="tab-sound">
+          <div class="srv-card-pro">
+            <div class="srv-icon-box"><i data-lucide="volume-2"></i></div>
+            <h3>Комплексна шумоізоляція</h3>
+            <p>Повне знешумлення дверей, підлоги, арки та даху якісними вібродемпферами STP/SilentCoat.</p>
+            <ul class="srv-specs">
+              <li><i data-lucide="check"></i> Зниження шуму до -70%</li>
+              <li><i data-lucide="check"></i> Теплоізоляція салону</li>
+            </ul>
+            <button class="btn btn-ghost" style="width:100%;" onclick="openModal('Шумоізоляція')">Дізнатися вартість</button>
+          </div>
+
+          <div class="srv-card-pro">
+            <div class="srv-icon-box"><i data-lucide="music"></i></div>
+            <h3>Акустика Focal & Alpine</h3>
+            <p>Установка компонентних динаміків, сабвуферів та підсилювачів із процесорним налаштуванням сцен.</p>
+            <ul class="srv-specs">
+              <li><i data-lucide="check"></i> Соковитий глибокий бас</li>
+              <li><i data-lucide="check"></i> Без заміни штатної магнітоли</li>
+            </ul>
+            <button class="btn btn-ghost" style="width:100%;" onclick="openModal('Автозвук')">Замовити звук</button>
+          </div>
+        </div>
+
+        <!-- Tab 3: Tech & Lights -->
+        <div class="tab-content" id="tab-tech">
+          <div class="srv-card-pro">
+            <div class="srv-icon-box"><i data-lucide="camera"></i></div>
+            <h3>Штатна камера заднього ходу</h3>
+            <p>Монтаж камери в ручку багажника з виведенням чіткого зображення та динамічних ліній на монітор.</p>
+            <ul class="srv-specs">
+              <li><i data-lucide="check"></i> Нічна зйомка HD</li>
+              <li><i data-lucide="check"></i> Захист від вологи IP68</li>
+            </ul>
+            <button class="btn btn-ghost" style="width:100%;" onclick="openModal('Камера заднього ходу')">Встановити камеру</button>
+          </div>
+
+          <div class="srv-card-pro">
+            <div class="srv-icon-box"><i data-lucide="lightbulb"></i></div>
+            <h3>LED & Ксенонове світло</h3>
+            <p>Заміна тьмяного галогену на потужні Bi-LED лінзи чи ксенон з точним регулюванням СТГ.</p>
+            <ul class="srv-specs">
+              <li><i data-lucide="check"></i> Яскравість +300% до штатного</li>
+              <li><i data-lucide="check"></i> Не засліплює зустрічний потік</li>
+            </ul>
+            <button class="btn btn-ghost" style="width:100%;" onclick="openModal('LED Світло')">Налаштувати світло</button>
+          </div>
+        </div>
+
+        <!-- Tab 4: Security -->
+        <div class="tab-content" id="tab-sec">
+          <div class="srv-card-pro">
+            <div class="srv-icon-box"><i data-lucide="shield-check"></i></div>
+            <h3>Охоронні комплекси Pandora</h3>
+            <p>Установка автосигналізацій з GSM/GPS трекінгом, автозапуском двигуна зі смартфона та метками.</p>
+            <ul class="srv-specs">
+              <li><i data-lucide="check"></i> Запуск з додатка iOS/Android</li>
+              <li><i data-lucide="check"></i> Захист від вудочок та грабберів</li>
+            </ul>
+            <button class="btn btn-ghost" style="width:100%;" onclick="openModal('Автосигналізація')">Захистити авто</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INSTANT COST CALCULATOR SECTION -->
+    <section class="calc-section" id="calculator">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag">Онлайн калькулятор</span>
+          <h2 class="sec-title font-heading">Розрахуйте орієнтовну вартість послуг</h2>
+        </div>
+
+        <div class="calc-card">
+          <div class="calc-grid">
+            <div>
+              <div class="opt-group">
+                <span class="opt-label">1. Оберіть тип вашого кузова:</span>
+                <div class="opt-buttons" id="typeBtns">
+                  <button class="opt-btn selected" onclick="setOpt('type', 1, this)">Седан / Хетчбек</button>
+                  <button class="opt-btn" onclick="setOpt('type', 1.2, this)">Кросовер / SUV</button>
+                  <button class="opt-btn" onclick="setOpt('type', 1.4, this)">Позашляховик / Бус</button>
+                </div>
+              </div>
+
+              <div class="opt-group">
+                <span class="opt-label">2. Оберіть потрібні послуги:</span>
+                <div class="opt-buttons" id="srvBtns">
+                  <button class="opt-btn selected" onclick="toggleOptSrv(2500, this)">Тонування скла</button>
+                  <button class="opt-btn" onclick="toggleOptSrv(3200, this)">Камера заднього ходу</button>
+                  <button class="opt-btn" onclick="toggleOptSrv(4500, this)">Шумоізоляція дверей</button>
+                  <button class="opt-btn" onclick="toggleOptSrv(3800, this)">Акустика салон</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="price-box">
+              <div style="font-size:13px; color:var(--ink-muted); font-weight:700;">Орієнтовна вартість:</div>
+              <div class="price-val" id="totalPrice">2 500 грн</div>
+              <div style="font-size:12.5px; color:var(--ink-secondary); margin-bottom:20px;">* Точний кошторис розраховується майстром після огляду</div>
+              <button class="btn" style="width:100%;" onclick="openModal('Розрахунок з калькулятора')">Забронювати час зі знижкою</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REAL WORKS GALLERY -->
+    <section id="works">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag">Галерея портфоліо</span>
+          <h2 class="sec-title font-heading">Приклади робіт, якими ми пишаємося</h2>
+          <p style="color:var(--ink-secondary); font-size:17px;">Кожне авто проходить ретельний контроль якості перед передачею власнику.</p>
+        </div>
+
+        <div class="works-grid-pro">
+          <div class="work-card-pro">
+            <div class="work-img-box">
+              <img src="image/Тонування.jpg" alt="Тонування автомобіля">
+              <span class="work-tag-badge">Тонування Llumar</span>
+            </div>
+            <div class="work-body">
+              <h4>Повне тонування седана</h4>
+              <p>Рівне глибоке затемнення плівкою Llumar 15%. Захист від сонця та охайний вигляд.</p>
+            </div>
+          </div>
+
+          <div class="work-card-pro">
+            <div class="work-img-box">
+              <img src="image/Камера заднього ходу.jpg" alt="Встановлення камери">
+              <span class="work-tag-badge">Камера & Парковка</span>
+            </div>
+            <div class="work-body">
+              <h4>Камера заднього ходу HD</h4>
+              <p>Акуратний монтаж у плафон підсвічування номера із підключенням до штатного екрана.</p>
+            </div>
+          </div>
+
+          <div class="work-card-pro">
+            <div class="work-img-box">
+              <img src="image/Акустика.jpg" alt="Оновлення акустики">
+              <span class="work-tag-badge">Автозвук Focal</span>
+            </div>
+            <div class="work-body">
+              <h4>Модернізація автозвуку</h4>
+              <p>Заміна штатних динаміків на Focal та встановлення компактного сабвуфера в багажник.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION & CONTACTS -->
+    <section id="contacts" style="background: var(--bg-card); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag">Локація та Запис</span>
+          <h2 class="sec-title font-heading">Завітайте до студії Інстал Авто</h2>
+        </div>
+
+        <div class="contact-wrapper">
+          <div class="c-panel">
+            <h3 style="font-size:24px; font-weight:800; margin-bottom:28px;" class="font-heading">Контактні дані</h3>
+
+            <div class="c-item">
+              <div class="c-icon-wrap"><i data-lucide="map-pin"></i></div>
+              <div>
+                <div style="font-size:12.5px; color:var(--ink-muted); font-weight:700;">Адреса боксу:</div>
+                <strong style="font-size:18px;">м. Львів, вул. Мідна 2</strong>
+              </div>
+            </div>
+
+            <div class="c-item">
+              <div class="c-icon-wrap"><i data-lucide="phone"></i></div>
+              <div>
+                <div style="font-size:12.5px; color:var(--ink-muted); font-weight:700;">Телефон для запису:</div>
+                <a href="tel:+380677622590" style="font-size:20px; font-weight:800; color:var(--amber-gold);">+380 67 762 25 90</a>
+              </div>
+            </div>
+
+            <div class="c-item">
+              <div class="c-icon-wrap"><i data-lucide="clock"></i></div>
+              <div>
+                <div style="font-size:12.5px; color:var(--ink-muted); font-weight:700;">Графік роботи:</div>
+                <strong style="font-size:16px;">Понеділок — Субота: 09:00 – 19:00</strong>
+              </div>
+            </div>
+
+            <button class="btn" style="width:100%; margin-top:10px;" onclick="openModal()">🔥 Записатися на зручний час</button>
+          </div>
+
+          <div class="map-box">
+            <iframe
+              title="Карта Інстал Авто"
+              src="https://www.google.com/maps?q=%D0%B2%D1%83%D0%BB.%20%D0%9C%D1%96%D0%B4%D0%BD%D0%B0%202%2C%2079037%2C%20Lviv&output=embed"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL BOOKING -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-card">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3 style="font-size:24px; font-weight:800; margin-bottom:8px;" class="font-heading" id="modalTitle">Запис на послугу</h3>
+      <p style="color:var(--ink-secondary); font-size:14px; margin-bottom:24px;">Залиште ваші дані, і майстер зателефонує вам протягом 15 хвилин для узгодження часу.</p>
+
+      <form onsubmit="event.preventDefault(); alert('Дякуємо! Ваша заявка прийнята. Майстер зателефонує вам найближчим часом.'); closeModal();">
+        <div style="margin-bottom:16px;">
+          <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Ваше ім'я:</label>
+          <input type="text" required placeholder="Олександр" style="width:100%; padding:14px 18px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid var(--border-subtle); color:#fff; font:inherit;">
+        </div>
+        <div style="margin-bottom:24px;">
+          <label style="display:block; font-size:13px; font-weight:700; margin-bottom:6px;">Номер телефону:</label>
+          <input type="tel" required placeholder="+380 67 000 00 00" style="width:100%; padding:14px 18px; border-radius:12px; background:rgba(255,255,255,0.05); border:1px solid var(--border-subtle); color:#fff; font:inherit;">
+        </div>
+        <button class="btn" style="width:100%; padding:16px;">Надіслати заявку</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>© 2026 Інстал Авто — Студія Преміального Автотюнінгу у Львові. Усі права захищені.</div>
+      <div style="margin-top:8px; color:var(--ink-muted);">Розробка студії Кузня · kuznya.studio</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+
+    // Tabs switching
+    function switchTab(tabId, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + tabId).classList.add('active');
+    }
+
+    // Calculator Logic
+    let currentMult = 1;
+    let selectedServicesSum = 2500;
+
+    function setOpt(group, mult, btn) {
+      btn.parentElement.querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      currentMult = mult;
+      recalc();
+    }
+
+    function toggleOptSrv(price, btn) {
+      btn.classList.toggle('selected');
+      recalc();
+    }
+
+    function recalc() {
+      let sum = 0;
+      document.querySelectorAll('#srvBtns .opt-btn.selected').forEach(b => {
+        if(b.textContent.includes('Тонування')) sum += 2500;
+        if(b.textContent.includes('Камера')) sum += 3200;
+        if(b.textContent.includes('Шумоізоляція')) sum += 4500;
+        if(b.textContent.includes('Акустика')) sum += 3800;
+      });
+      let total = Math.round(sum * currentMult);
+      document.getElementById('totalPrice').textContent = total.toLocaleString('uk-UA') + ' грн';
+    }
+
+    // Modal
+    function openModal(serviceName) {
+      if(serviceName) document.getElementById('modalTitle').textContent = 'Запис: ' + serviceName;
+      else document.getElementById('modalTitle').textContent = 'Онлайн запис на послугу';
+      document.getElementById('modalOverlay').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('modalOverlay').classList.remove('active');
+    }
+  </script>
+</body>
+</html>

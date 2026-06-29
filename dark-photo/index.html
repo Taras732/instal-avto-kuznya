@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Інстал Авто — Преміальне тонування авто, автозвук, шумоізоляція, ксенон, парктроніки та камери заднього ходу у Львові (вул. Мідна 2).">
+  <title>Інстал Авто — Тонування, Автозвук та Тюнінг у Львові</title>
+  <link rel="icon" type="image/jpg" href="image/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --bg-surface: #0f1420;
+      --bg-card: #141b2d;
+      --bg-card-hover: #1b243b;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-amber: rgba(245, 158, 11, 0.3);
+      
+      --ink-primary: #f8fafc;
+      --ink-secondary: #94a3b8;
+      --ink-muted: #64748b;
+      
+      --amber: #f59e0b;
+      --amber-light: #fbbf24;
+      --amber-glow: rgba(245, 158, 11, 0.25);
+      
+      --grad-amber: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+      --grad-dark: linear-gradient(180deg, #07090e 0%, #0f1420 100%);
+      
+      --shadow-card: 0 14px 35px -10px rgba(0, 0, 0, 0.5);
+      --shadow-glow: 0 0 40px -10px rgba(245, 158, 11, 0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--ink-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container { max-width: 1240px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+    a { color: inherit; text-decoration: none; }
+
+    .font-heading { font-family: 'Space Grotesk', sans-serif; }
+    .amber-text {
+      background: var(--grad-amber);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; height: 80px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 20px; }
+    .brand-logo { width: 44px; height: 44px; border-radius: 12px; object-fit: cover; border: 1px solid var(--border-amber); }
+    
+    .nav { display: flex; gap: 32px; align-items: center; }
+    .nav a { font-weight: 600; font-size: 14.5px; color: var(--ink-secondary); transition: color 0.2s; }
+    .nav a:hover { color: var(--amber-light); }
+    
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      background: var(--grad-amber); color: #1a0f00; font-weight: 800; font-size: 15px;
+      padding: 14px 28px; border-radius: 12px; border: none; cursor: pointer;
+      transition: all 0.25s ease; box-shadow: 0 8px 20px -4px rgba(245, 158, 11, 0.4);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -4px rgba(245, 158, 11, 0.6); }
+    .btn-ghost { background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-subtle); color: var(--ink-primary); box-shadow: none; }
+    .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); }
+
+    /* Hero */
+    .hero { position: relative; padding: 80px 0; overflow: hidden; background: radial-gradient(1000px 500px at 70% 30%, rgba(245, 158, 11, 0.1), transparent); }
+    .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+    @media (max-width: 960px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(245, 158, 11, 0.1); border: 1px solid var(--border-amber);
+      padding: 6px 16px; border-radius: 30px; font-size: 13px; font-weight: 700; color: var(--amber-light); margin-bottom: 20px;
+    }
+    .hero h1 { font-size: 52px; line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 20px; }
+    @media (max-width: 600px) { .hero h1 { font-size: 36px; } }
+    .hero p { font-size: 18px; color: var(--ink-secondary); margin-bottom: 32px; max-width: 600px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    @media (max-width: 960px) { .hero-actions { justify-content: center; } }
+
+    .hero-visual { position: relative; display: flex; justify-content: center; }
+    .hero-car { width: 100%; max-width: 540px; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.7)); transition: transform 0.4s ease; }
+    .hero-car:hover { transform: scale(1.03); }
+
+    /* Kuznya Badge */
+    .kuznya-badge {
+      display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 106, 26, 0.1);
+      border: 1px solid rgba(255, 106, 26, 0.3); padding: 6px 14px; border-radius: 30px;
+      font-size: 12px; font-weight: 700; color: #ff6a1a; margin-bottom: 20px;
+    }
+
+    /* Sections */
+    section { padding: 90px 0; }
+    .sec-head { text-align: center; max-width: 700px; margin: 0 auto 50px; }
+    .sec-tag { font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.15em; color: var(--amber-light); margin-bottom: 10px; display: block; }
+    .sec-title { font-size: 36px; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 14px; }
+
+    /* Services Grid */
+    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    @media (max-width: 1024px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .services-grid { grid-template-columns: 1fr; } }
+
+    .srv-card {
+      background: var(--bg-surface); border: 1px solid var(--border-subtle);
+      border-radius: 20px; padding: 28px; transition: all 0.3s ease; display: flex; flex-direction: column;
+    }
+    .srv-card:hover { transform: translateY(-6px); border-color: var(--border-amber); box-shadow: var(--shadow-glow); background: var(--bg-card); }
+    .srv-icon { width: 50px; height: 50px; border-radius: 14px; background: rgba(245, 158, 11, 0.1); border: 1px solid var(--border-amber); display: grid; place-items: center; color: var(--amber-light); margin-bottom: 20px; }
+    .srv-card h3 { font-size: 19px; font-weight: 700; margin-bottom: 10px; }
+    .srv-card p { font-size: 14.5px; color: var(--ink-secondary); line-height: 1.5; }
+
+    /* Split Section (Why Us) */
+    .split-box { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 28px; padding: 48px; }
+    @media (max-width: 900px) { .split-box { grid-template-columns: 1fr; padding: 32px; } }
+
+    .why-list { display: grid; gap: 20px; margin-top: 28px; }
+    .why-item { display: flex; gap: 16px; align-items: flex-start; }
+    .why-icon { width: 36px; height: 36px; border-radius: 10px; background: rgba(245, 158, 11, 0.15); color: var(--amber-light); display: grid; place-items: center; flex-shrink: 0; margin-top: 2px; }
+
+    /* Works Gallery */
+    .works-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    @media (max-width: 900px) { .works-grid { grid-template-columns: 1fr; } }
+
+    .work-card {
+      background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 20px; overflow: hidden;
+      box-shadow: var(--shadow-card); transition: all 0.3s ease; cursor: pointer;
+    }
+    .work-card:hover { transform: translateY(-6px); border-color: var(--border-amber); box-shadow: var(--shadow-glow); }
+    .work-img-wrap { height: 240px; overflow: hidden; position: relative; }
+    .work-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+    .work-card:hover img { transform: scale(1.06); }
+    .work-badge { position: absolute; top: 14px; right: 14px; background: rgba(7, 9, 14, 0.8); border: 1px solid var(--border-subtle); color: #fff; font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 20px; }
+    .work-info { padding: 20px; }
+    .work-info h4 { font-size: 18px; font-weight: 700; margin-bottom: 6px; }
+    .work-info p { font-size: 14px; color: var(--ink-secondary); }
+
+    /* Contacts & Map */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 32px; }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
+
+    .contact-card { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: 24px; padding: 36px; }
+    .c-row { display: flex; gap: 16px; margin-bottom: 24px; align-items: flex-start; }
+    .c-icon { width: 44px; height: 44px; border-radius: 12px; background: rgba(245, 158, 11, 0.1); border: 1px solid var(--border-amber); display: grid; place-items: center; color: var(--amber-light); flex-shrink: 0; }
+
+    .map-frame { border-radius: 24px; overflow: hidden; border: 1px solid var(--border-subtle); min-height: 380px; }
+    .map-frame iframe { width: 100%; height: 100%; min-height: 380px; border: none; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--border-subtle); padding: 40px 0; text-align: center; font-size: 14px; color: var(--ink-muted); background: var(--bg-dark); }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-inner">
+      <a href="#top" class="brand font-heading">
+        <img src="image/logo.jpg" alt="Інстал Авто" class="brand-logo">
+        <span>Інстал <span class="amber-text">Авто</span></span>
+      </a>
+
+      <nav class="nav">
+        <a href="#services">Послуги</a>
+        <a href="#why">Чому ми</a>
+        <a href="#works">Наші роботи</a>
+        <a href="#contacts">Контакти</a>
+      </nav>
+
+      <a href="tel:+380677622590" class="btn">📞 +380 67 762 25 90</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <a href="https://kuznya.studio" target="_blank" rel="noopener" class="kuznya-badge">
+            <span style="width:6px;height:6px;border-radius:50%;background:#ff6a1a;display:inline-block;"></span>
+            Сайт розроблено в Кузні →
+          </a>
+          <div class="hero-tag">ПЕРШОКЛАСНИЙ АВТОТЮНІНГ У ЛЬВОВІ</div>
+          <h1 class="font-heading">
+            Преміальне тонування, автозвук та <span class="amber-text">захист авто</span>
+          </h1>
+          <p>
+            Професійне тонування якісними плівками, оновлення акустики, акуратна шумоізоляція, автосигналізації та камери заднього ходу. Робимо охайно, з гарантією та точно під ваше авто.
+          </p>
+          <div class="hero-actions">
+            <a href="tel:+380677622590" class="btn">Записатися майстра</a>
+            <a href="#services" class="btn btn-ghost">Дивитися всі послуги</a>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <img src="image/hero-car-cutout.png" alt="Автомобіль Інстал Авто" class="hero-car">
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag">Послуги студії</span>
+          <h2 class="sec-title font-heading">Повний спектр рішень для вашого комфорту та безпеки</h2>
+          <p style="color:var(--ink-secondary);">Підбираємо матеріали та обладнання конкретно під вашу модель авто для ідеального результату.</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="srv-card">
+            <div class="srv-icon"><i data-lucide="sparkles"></i></div>
+            <h3>Тонування авто</h3>
+            <p>Преміальні плівки, чисте затемнення без бульбашок та рівний охайний вигляд скла.</p>
+          </div>
+
+          <div class="srv-card">
+            <div class="srv-icon"><i data-lucide="volume-2"></i></div>
+            <h3>Шумоізоляція</h3>
+            <p>Якісне знешумлення салону. Значне зменшення гулу дороги та вібрацій на трасі.</p>
+          </div>
+
+          <div class="srv-card">
+            <div class="srv-icon"><i data-lucide="music-2"></i></div>
+            <h3>Автозвук & Акустика</h3>
+            <p>Підбір та заміна динаміків, сабвуферів, підсилювачів для соковитого та чистого звучання.</p>
+          </div>
+
+          <div class="srv-card">
+            <div class="srv-icon"><i data-lucide="shield"></i></div>
+            <h3>Автосигналізація</h3>
+            <p>Установка сучасних охоронних систем, автозапуску та захисту від угону.</p>
+          </div>
+
+          <div class="srv-card">
+            <div class="srv-icon"><i data-lucide="camera"></i></div>
+            <h3>Камера заднього ходу</h3>
+            <p>Штатне встановлення та підключення камери для безпечного паркування вночі.</p>
+          </div>
+
+          <div class="srv-card">
+            <div class="srv-icon"><i data-lucide="radar"></i></div>
+            <h3>Парктроніки</h3>
+            <p>Монтаж датчиків паркування у бампер з точним фарбуванням під колір кузова.</p>
+          </div>
+
+          <div class="srv-card">
+            <div class="srv-icon"><i data-lucide="lightbulb"></i></div>
+            <h3>Ксенон & LED Світло</h3>
+            <p>Встановлення та якісне налаштування автосвітла для безпечних поїздок вночі.</p>
+          </div>
+
+          <div class="srv-card">
+            <div class="srv-icon"><i data-lucide="cloud-fog"></i></div>
+            <h3>Протитуманні фари (ПТФ)</h3>
+            <p>Монтаж ПТФ та коректне підключення до штатної електрики автомобіля.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section id="why" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="split-box">
+          <div>
+            <span class="sec-tag">Чому обирають нас</span>
+            <h2 class="sec-title font-heading">Охайний підхід та відповідальність за кожен деталь</h2>
+            <p style="color:var(--ink-secondary);">Ми розуміємо, наскільки важливе для вас авто. Тому працюємо без халатності, дбайливо до салону та з гарантією на виконані роботи.</p>
+
+            <div class="why-list">
+              <div class="why-item">
+                <div class="why-icon"><i data-lucide="check-circle-2"></i></div>
+                <div>
+                  <h4 style="font-size:17px; font-weight:700;">Акуратний та чистий монтаж</h4>
+                  <p style="font-size:14px; color:var(--ink-secondary);">Жодних пошкоджених обшивок чи висячих дротів. Все монтується за заводськими стандартами.</p>
+                </div>
+              </div>
+
+              <div class="why-item">
+                <div class="why-icon"><i data-lucide="sliders"></i></div>
+                <div>
+                  <h4 style="font-size:17px; font-weight:700;">Персональний підбір обладнання</h4>
+                  <p style="font-size:14px; color:var(--ink-secondary);">Підбираємо плівку, світло чи акустику під конкретну модель та бюджет клієнта.</p>
+                </div>
+              </div>
+
+              <div class="why-item">
+                <div class="why-icon"><i data-lucide="award"></i></div>
+                <div>
+                  <h4 style="font-size:17px; font-weight:700;">Гарантія на роботу та матеріали</h4>
+                  <p style="font-size:14px; color:var(--ink-secondary);">Використовуємо лише перевірені бренди плівок та компоненти з гарантією.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <img src="image/photo.jpg" alt="Процес роботи Інстал Авто" style="width:100%; border-radius:20px; border:1px solid var(--border-subtle); box-shadow:var(--shadow-card);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKS GALLERY SECTION -->
+    <section id="works">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag">Галерея робіт</span>
+          <h2 class="sec-title font-heading">Реальні авто, які виїхали з нашого боксу</h2>
+          <p style="color:var(--ink-secondary);">Оцініть якість виконання тонування, встановлення камери та автозвуку.</p>
+        </div>
+
+        <div class="works-grid">
+          <div class="work-card">
+            <div class="work-img-wrap">
+              <img src="image/Тонування.jpg" alt="Тонування автомобіля">
+              <span class="work-badge">Тонування</span>
+            </div>
+            <div class="work-info">
+              <h4>Преміальне тонування скла</h4>
+              <p>Чисте затемнення, охайні краї та захист від ультрафіолету.</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-img-wrap">
+              <img src="image/Камера заднього ходу.jpg" alt="Камера заднього ходу">
+              <span class="work-badge">Камера & Парковка</span>
+            </div>
+            <div class="work-info">
+              <h4>Встановлення камери заднього ходу</h4>
+              <p>Інтеграція в штатний монітор для комфортного паркування.</p>
+            </div>
+          </div>
+
+          <div class="work-card">
+            <div class="work-img-wrap">
+              <img src="image/Акустика.jpg" alt="Встановлення акустики">
+              <span class="work-badge">Автозвук</span>
+            </div>
+            <div class="work-info">
+              <h4>Модернізація акустичної системи</h4>
+              <p>Установка нових динаміків та якісна шумоізоляція дверей.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTS SECTION -->
+    <section id="contacts" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+      <div class="container">
+        <div class="sec-head">
+          <span class="sec-tag">Контакти & Локація</span>
+          <h2 class="sec-title font-heading">Чекаємо на вас у студії Інстал Авто</h2>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3 style="font-size:22px; font-weight:800; margin-bottom:24px;" class="font-heading">Дані для зв'язку</h3>
+
+            <div class="c-row">
+              <div class="c-icon"><i data-lucide="map-pin"></i></div>
+              <div>
+                <div style="font-size:12px; color:var(--ink-muted); font-weight:700;">Адреса боксу:</div>
+                <strong style="font-size:16px;">м. Львів, вул. Мідна 2</strong>
+              </div>
+            </div>
+
+            <div class="c-row">
+              <div class="c-icon"><i data-lucide="phone"></i></div>
+              <div>
+                <div style="font-size:12px; color:var(--ink-muted); font-weight:700;">Телефон для запису:</div>
+                <a href="tel:+380677622590" style="font-size:18px; font-weight:800; color:var(--amber-light);">+380 67 762 25 90</a>
+              </div>
+            </div>
+
+            <div class="c-row">
+              <div class="c-icon"><i data-lucide="clock"></i></div>
+              <div>
+                <div style="font-size:12px; color:var(--ink-muted); font-weight:700;">Графік роботи:</div>
+                <strong style="font-size:15px;">Пн — Сб: 09:00 – 19:00</strong>
+              </div>
+            </div>
+
+            <a href="tel:+380677622590" class="btn" style="width:100%; margin-top:10px;">Зателефонувати та записатися</a>
+          </div>
+
+          <div class="map-frame">
+            <iframe
+              title="Карта Інстал Авто"
+              src="https://www.google.com/maps?q=%D0%B2%D1%83%D0%BB.%20%D0%9C%D1%96%D0%B4%D0%BD%D0%B0%202%2C%2079037%2C%20Lviv&output=embed"
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div>© 2026 Інстал Авто — Тонування та автотюнінг у Львові. Усі права захищені.</div>
+      <div style="margin-top:8px;">Студія Кузня · kuznya.studio</div>
+    </div>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

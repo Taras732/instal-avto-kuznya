@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Інстал Авто — порівняння версій (internal)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0c1320;--card:#141d2e;--line:rgba(255,255,255,.1);--ink:#fff;--mut:#9aa6b8;--or:#ff6a1a;--bl:#3b82f6}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+    .wrap{max-width:1080px;margin:0 auto;padding:56px 24px 80px}
+    .tag{display:inline-block;font-size:13px;font-weight:600;color:var(--or);background:rgba(255,106,26,.12);padding:6px 14px;border-radius:999px;margin-bottom:18px}
+    h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,4vw,40px);margin:0 0 12px}
+    .sub{color:var(--mut);max-width:640px;margin:0 0 14px;font-size:17px}
+    .note{color:var(--mut);font-size:14px;background:var(--card);border:1px solid var(--line);border-left:3px solid var(--or);padding:14px 18px;border-radius:10px;margin:22px 0 40px}
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;transition:.2s;display:flex;flex-direction:column}
+    .card:hover{transform:translateY(-3px);border-color:var(--bl)}
+    .card h2{font-family:'Space Grotesk',sans-serif;font-size:21px;margin:0 0 6px}
+    .badge{font-size:12px;font-weight:600;padding:4px 10px;border-radius:999px;align-self:flex-start;margin-bottom:14px}
+    .b-rec{background:rgba(255,106,26,.16);color:var(--or)}
+    .b-mine{background:rgba(59,130,246,.16);color:#60a5fa}
+    .b-orig{background:rgba(255,255,255,.08);color:var(--mut)}
+    .card p{color:var(--mut);font-size:14.5px;margin:0 0 20px;flex:1}
+    .open{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--bl);color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:11px;transition:.2s}
+    .open:hover{background:#2563eb}
+    .meta{color:var(--mut);font-size:13px;margin-top:14px}
+    @media(max-width:680px){.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <span class="tag">Кузня · internal preview</span>
+    <h1>Інстал Авто — 4 версії лендінгу</h1>
+    <p class="sub">Порівняння всіх напрямів в одному місці. Обери базу — і я доведу її до фіналу для ліда.</p>
+    <div class="note">⚠️ Це службова сторінка для порівняння, не для відправки лідові. Цифри, відгуки та ціни в моїх версіях — плейсхолдери, узгодити з власником.</div>
+
+    <div class="grid">
+      <div class="card">
+        <h2>Темна + калькулятор</h2>
+        <span class="badge b-rec">найпроробленіша</span>
+        <p>Темний преміум, онлайн-калькулятор вартості, плівки Llumar/SunTek, бронювання скла. У стилі Кузні. (паралельна версія)</p>
+        <a class="open" href="dark-calc/" target="_blank" rel="noopener">Відкрити →</a>
+      </div>
+      <div class="card">
+        <h2>Темна + фото майстра</h2>
+        <span class="badge b-orig">паралельна</span>
+        <p>Темна, чистіша. Реальне фото власника на банері StarLine, 8 послуг. Без калькулятора.</p>
+        <a class="open" href="dark-photo/" target="_blank" rel="noopener">Відкрити →</a>
+      </div>
+      <div class="card">
+        <h2>Світла (моя)</h2>
+        <span class="badge b-mine">моя нова</span>
+        <p>Світлий чистий мінімал: лічильники довіри, галерея з lightbox, відгуки, ціни, форма заявки + Viber/Telegram/WhatsApp.</p>
+        <a class="open" href="light/" target="_blank" rel="noopener">Відкрити →</a>
+      </div>
+      <div class="card">
+        <h2>Початкова (Аліна v1)</h2>
+        <span class="badge b-orig">оригінал</span>
+        <p>Перша синьо-золота версія, з якої все почалось. Для порівняння «звідки прийшли».</p>
+        <a class="open" href="original/" target="_blank" rel="noopener">Відкрити →</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
